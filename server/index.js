@@ -7,14 +7,13 @@ const API_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJodHRwczovL2FjY2
 const app = express();
 const mysql = require('mysql');
 const PORT = 3001;
+require('dotenv').config();
 
 const db = mysql.createPool({
-  host: '103.92.235.85',
-  user: 'yatayati_Chinna',
-  password: 'Chinna@sohail',
-  database: 'yatayati_Chinna',
-  timezone: 'Asia/Kolkata',
-  connectTimeout: 20000,
+  host: process.env.DB_HOST,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_DATABASE,
 });
 
 
